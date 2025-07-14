@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Flappy Fird Clone"
+run/main_scene="uid://divg1fxab3mx1"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=1600
+window/handheld/orientation=1
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
