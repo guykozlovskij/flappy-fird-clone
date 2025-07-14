@@ -1,16 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://divg1fxab3mx1"]
+[gd_scene load_steps=6 format=3 uid="uid://divg1fxab3mx1"]
 
 [ext_resource type="PackedScene" uid="uid://vojkts01efpf" path="res://Scenes/bird.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://clbpmk20iuvfw" path="res://Assets/Game Objects/background-day.png" id="2_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://btim0foedefb6" path="res://Assets/Game Objects/base.png" id="2_wrm1d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dryh"]
+atlas = ExtResource("2_wrm1d")
+region = Rect2(0, 0, 336, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wowpa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dryh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dryh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Sprites" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Sprites"]
 z_index = -2
-position = Vector2(499, 763)
-scale = Vector2(4.04774, 4.04774)
+position = Vector2(605, 981)
+scale = Vector2(4.35026, 4.35026)
 texture = ExtResource("2_qxrlw")
 
+[node name="Ground" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(604, 1706)
+scale = Vector2(3.77734, 3.77734)
+sprite_frames = SubResource("SpriteFrames_wowpa")
+
 [node name="Bird" parent="." instance=ExtResource("1_ebmjs")]
-position = Vector2(275, 790)
+position = Vector2(269, 811)
 scale = Vector2(4, 4)
