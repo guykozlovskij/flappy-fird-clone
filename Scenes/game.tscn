@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://divg1fxab3mx1"]
+[gd_scene load_steps=4 format=3 uid="uid://divg1fxab3mx1"]
 
 [ext_resource type="PackedScene" uid="uid://vojkts01efpf" path="res://Scenes/bird.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://clbpmk20iuvfw" path="res://Assets/Game Objects/background-day.png" id="2_qxrlw"]
+[ext_resource type="Script" uid="uid://81gnrue3h4dm" path="res://Scripts/bird.gd" id="2_wrm1d"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Sprites" type="Node" parent="."]
-
-[node name="Background" type="Sprite2D" parent="Sprites"]
-z_index = -2
-position = Vector2(605, 981)
-scale = Vector2(4.35026, 4.35026)
-texture = ExtResource("2_qxrlw")
-
 [node name="Bird" parent="." instance=ExtResource("1_ebmjs")]
-position = Vector2(269, 811)
+position = Vector2(221, 785)
+scale = Vector2(3.5, 3.5)
+script = ExtResource("2_wrm1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(550, 851)
 scale = Vector2(4, 4)
+texture = ExtResource("2_qxrlw")

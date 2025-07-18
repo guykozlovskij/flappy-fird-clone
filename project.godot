@@ -17,9 +17,14 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1200
-window/size/viewport_height=1800
+window/size/viewport_width=1100
+window/size/viewport_height=1600
+window/size/resizable=false
 window/handheld/orientation=1
+
+[physics]
+
+2d/default_gravity=2525.7
 
 [rendering]
 
