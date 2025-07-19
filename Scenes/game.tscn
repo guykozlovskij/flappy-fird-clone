@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://divg1fxab3mx1"]
+[gd_scene load_steps=6 format=3 uid="uid://divg1fxab3mx1"]
 
+[ext_resource type="Script" uid="uid://bthhtqr4np6ol" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://vojkts01efpf" path="res://Scenes/bird.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://clbpmk20iuvfw" path="res://Assets/Game Objects/background-day.png" id="2_qxrlw"]
 [ext_resource type="Script" uid="uid://81gnrue3h4dm" path="res://Scripts/bird.gd" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://byvosv1wvbt0p" path="res://Scenes/pipes.tscn" id="5_wowpa"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_3dryh")
 
 [node name="Bird" parent="." instance=ExtResource("1_ebmjs")]
 position = Vector2(221, 785)
@@ -16,3 +19,11 @@ z_index = -2
 position = Vector2(550, 851)
 scale = Vector2(4, 4)
 texture = ExtResource("2_qxrlw")
+
+[node name="Node2D" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(902, 1217)
+scale = Vector2(3, 3)
+
+[node name="Node2D2" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(1294, 979)
+scale = Vector2(3, 3)
