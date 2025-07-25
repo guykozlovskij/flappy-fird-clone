@@ -1,15 +1,17 @@
 extends Node2D
 
-var pipes = load("res://Scenes/pipes.tscn")
+@export var moving_pipes := preload("res://Scenes/pipes.tscn")
+@export var spawn_interval:= 2.0 # seconds
+@export var min_y: int = 100
+@export var max_y: int = 400
+@onready var spawn_timer: Timer = $Timer
 
-@onready var game: Node2D = $"."
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	spawn_timer.wait_time = spawn_interval
+	spawn_timer.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_timer_timeout() -> void:
+	var pipe_instance = moving_pipes.instantiate()
+	pipe_instance.scale = Vector2(3.0, 3.0)
+	pipe_instance.position = Vector2(get_viewport_rect().size.x + 100, randf_range(min_y, max_y))
+	add_child(pipe_instance)
